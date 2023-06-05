@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 // const cookie=require('cookie');
 const passport = require("passport");
 const nodemailer = require("nodemailer");
-const flash = require("connect-flash");
 
 // sending mail to reset the password
 async function sendMailForResetPassword(name, email, token) {

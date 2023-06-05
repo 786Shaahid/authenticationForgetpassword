@@ -7,33 +7,41 @@ const nodemailer = require("nodemailer");
 
 // sending mail to reset the password
 async function sendMailForResetPassword(name, email, token) {
-  const transporter = await nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    requireTLS: true,
-    auth: {
-      user: process.env.USER_EMAIL_ID, 
-      pass: process.env.USER_PASSWORD, 
-    },
-  });
-
-  const mailOption={
-    from: process.env.USER_EMAIL_ID, // sender address
-    to: email,
-    subject: "Reset Your Password", // Subject line
-    html: `<pre> <b>hii ${name},<br><br> We received a request to reset the password for your account.<br><br> To reset your password, click on the button below:<br><button><a href=http://localhost:5000/reset-password?${token}>Reset Password</a></button></b></pre>`, // html body
-  }
-  // send mail
-  await transporter.sendMail(mailOption,(err,data)=>{
-    if(err) {
-      console.log('Error in sending mail',err);
-      return false;
-    }else{
-      console.log("Email sended",data);
+  try{
+    const transporter = await nodemailer.createTransport({
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      requireTLS: true,
+      auth: {
+        user: process.env.USER_EMAIL_ID, 
+        pass: process.env.USER_PASSWORD, 
+      },
+    });
+  
+    const mailOption={
+      from: process.env.USER_EMAIL_ID, // sender address
+      to: email,
+      subject: "Reset Your Password", // Subject line
+      html: `<pre> <b>hii ${name},<br><br> We received a request to reset the password for your account.<br><br> To reset your password, click on the button below:<br><button><a href=http://localhost:5000/reset-password?${token}>Reset Password</a></button></b></pre>`, // html body
     }
-  });
+    // send mail
+    await transporter.sendMail(mailOption,(err,data)=>{
+      if(err) {
+        console.log('Error in sending mail',err);
+        return false;
+      }else{
+        console.log("Email sended",data);
+      }
+    });
+    
+  }catch(err){
+    return res.status(400).json({
+      status:false,
+      error:err
+    })
+  }
 }
 
 // sign up

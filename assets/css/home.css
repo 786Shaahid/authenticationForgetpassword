@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(47, 10, 82);
+    font-size: 18px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: rgb(134, 232, 119);
+}
+#body-box{
+    width: 98vw;
+    height: 80vh;
+    margin: 3px auto;
+    box-shadow: inset 2px 3px 4px 5px blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

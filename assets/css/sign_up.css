@@ -1,0 +1,58 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container{
+    width: 30vw;
+   min-height: 70vh;
+    border: 2px solid blue;
+    margin: 50px auto;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 4px 4px rgb(168, 154, 234,0.5);
+}
+fieldset{
+    padding: 10px 30px;
+
+}
+
+#submitButton{
+    width: 12vw;
+    height: 5vh;
+    font-size: 18px;
+    margin-left:100px ;
+    font-family: sans-serif;
+    border-radius: 10px;
+    background-color: rgb(14, 14, 58);
+    color: white;
+}
+#submitButton:active{
+    width: 13vw;
+    height: 5vh;
+    font-size: 19px;
+    margin-left:100px ;
+    font-family: sans-serif;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: rgb(71, 101, 11);
+    color: white;
+}
+p{
+    width: 25vw;
+    border: 2px solid rgba(49, 28, 68, 0.8);
+}
+#google-auth{
+    width: 25vw;
+    height: 5vh;
+    margin: 15px auto;
+    font-size: large;
+    background-color: rgb(12, 12, 45);
+}
+a{
+    text-decoration: none;
+    color: white;
+}

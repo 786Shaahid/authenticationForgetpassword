@@ -1,5 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passport=require('passport');
+const env=require('dotenv').config();
+
 const User=require('../models/user');
 const crypto=require('crypto');
 const bcrypt=require('bcrypt');

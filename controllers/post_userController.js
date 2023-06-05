@@ -121,7 +121,6 @@ module.exports.sign_out = async (req, res) => {
 // veryfi token
 module.exports.verify_token = async (req, res, next) => {
   const token = req.cookies.token;
-  console.log("token", token);
   const user = await jwt.verify(token, process.env.SECRETE_KEY);
   return next();
 };

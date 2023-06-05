@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname,"assets")))
  
 // connect routes
 app.use('/',require('./routes/router'));
+app.use('/*',require('./routes/user'))
 
 app.listen(port,(err)=>{
     if(err){console.log('Server is not running port',port);}

@@ -6,7 +6,6 @@ const cookie=require('cookie')
 const session=require('express-session');
 const cookieParser=require('cookie-parser');
 const passport=require('./config/google-auth');
-
 // mongoose connection
 const mongoose=require('./config/mongoose');
 const port=  5000 || process.env.PORT_NO ;

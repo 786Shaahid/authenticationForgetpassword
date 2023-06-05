@@ -30,6 +30,6 @@
     "randomstring": "^1.2.3"
   },
   "engines": {
-    "node": ""
+    "node": ">=14.20.1 <15"
   }
 }

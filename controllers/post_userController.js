@@ -102,9 +102,7 @@ module.exports.post_signIn = async (req, res) => {
 
   // if user then go for home page
   if (user && password) {
-  return  res.status(200).render("home_page",{
-      title: "home",
-    });
+  return  res.status(200).redirect('/home');
   }
 };
 

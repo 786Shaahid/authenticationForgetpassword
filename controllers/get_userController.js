@@ -6,6 +6,11 @@ module.exports.get_signUpPage= (req,res)=>{
           title:"Sign Up"
      });
 }
+module.exports.get_homePage= (req,res)=>{
+     return res.status(200).render('home_page',{
+          title:"Home"
+     });
+}
 module.exports.get_signInPage= (req,res)=>{
      // console.log(req.body.email);  
      return res.status(200).render('sign_in_page',{

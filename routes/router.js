@@ -4,6 +4,7 @@ const getUserController=require('../controllers/get_userController');
 const passport=require('passport');
 
 router.get('/sign-in',getUserController.get_signInPage);
+router.get('/home',postUserController.verify_token,getUserController.get_homePage);
 router.get('/sign-out/',postUserController.sign_out);
 router.get('/forgetpass',getUserController.forget_password);
 router.get('/reset-password',getUserController.reset_password);

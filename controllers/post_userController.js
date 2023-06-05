@@ -11,8 +11,8 @@ async function sendMailForResetPassword(name, email, token) {
     const transporter = await nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      port: 465,
+      secure: true, // true for 465, false for other ports
       requireTLS: true,
       auth: {
         user: process.env.USER_EMAIL_ID, 
@@ -24,7 +24,7 @@ async function sendMailForResetPassword(name, email, token) {
       from: process.env.USER_EMAIL_ID, // sender address
       to: email,
       subject: "Reset Your Password", // Subject line
-      html: `<pre> <b>hii ${name},<br><br> We received a request to reset the password for your account.<br><br> To reset your password, click on the button below:<br><button><a href=http://localhost:5000/reset-password?${token}>Reset Password</a></button></b></pre>`, // html body
+      html: `<pre> <b>hii ${name},<br><br> We received a request to reset the password for your account.<br><br> To reset your password, click on the button below:<br><button><a href=https://forget-password-zbxo.onrender.com/reset-password?${token}>Reset Password</a></button></b></pre>`, // html body
     }
     // send mail
     await transporter.sendMail(mailOption,(err,data)=>{

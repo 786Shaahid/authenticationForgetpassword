@@ -26,7 +26,7 @@ async function sendMailForResetPassword(name, email, token) {
     html: `<pre> <b>hii ${name},<br><br> We received a request to reset the password for your account.<br><br> To reset your password, click on the button below:<br><button><a href=http://localhost:5000/reset-password?${token}>Reset Password</a></button></b></pre>`, // html body
   }
   // send mail
-   transporter.sendMail(mailOption,(err,data)=>{
+  await transporter.sendMail(mailOption,(err,data)=>{
     if(err) {
       console.log('Error in sending mail',err);
       return false;

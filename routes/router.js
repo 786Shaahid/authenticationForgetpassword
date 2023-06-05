@@ -3,7 +3,6 @@ const postUserController=require('../controllers/post_userController')
 const getUserController=require('../controllers/get_userController');
 const passport=require('passport');
 
-router.get('/',getUserController.get_signUpPage);
 router.get('/sign-in',getUserController.get_signInPage);
 router.get('/sign-out/',postUserController.sign_out);
 router.get('/forgetpass',getUserController.forget_password);

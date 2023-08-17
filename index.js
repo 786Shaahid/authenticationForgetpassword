@@ -2,7 +2,7 @@ const env=require('dotenv').config();
 const express=require('express');
 const path=require('path');
 const ejs=require('ejs');
-const cookie=require('cookie')
+const cookie=require('cookie');
 const session=require('express-session');
 const cookieParser=require('cookie-parser');
 const passport=require('./config/google-auth');
@@ -38,6 +38,6 @@ app.use('/',require('./routes/router'));
 app.use('/*',require('./routes/user'))
 
 app.listen(port,(err)=>{
-    if(err){console.log('Server is not running port',port);}
+    if(err){console.log('Server is not running on port',port);}
    return console.log(`Server is Connected successfully!,on port:${port}`);
 })

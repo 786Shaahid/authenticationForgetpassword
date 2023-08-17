@@ -43,7 +43,7 @@ passport.serializeUser=(user,done)=>{
     return done(null,user);
 }
 passport.deserializeUser= async(data,done )=>{
-   User.findById({_id:id},(err,user)=>{
+  await User.findById({_id:id},(err,user)=>{
         if(err){console.log('Error in finding the user'); return done(err);}
         return done(null,user);
     })
